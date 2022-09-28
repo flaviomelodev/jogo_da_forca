@@ -1,9 +1,4 @@
-import 'package:equatable/equatable.dart';
-
 part of 'palavras_list_bloc.dart';
-
-
-
 
 abstract class PalavrasEvent extends Equatable {
   @override

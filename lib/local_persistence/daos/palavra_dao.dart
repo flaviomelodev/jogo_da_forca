@@ -32,7 +32,7 @@ class PalavraDAO {
         columns: [kPalavraPalavraID, kPalavraPalavra, kPalavraAjuda],
         offset: startIndex,
         limit: limit,
-        orderBy: '$kPalavraPalavra COLLATE LOCALIZED',
+        orderBy: '$kPalavraPalavra',
       );
       dataList = result.toList();
       dataList.sort((a, b) {

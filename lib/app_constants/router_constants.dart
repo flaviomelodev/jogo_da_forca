@@ -1,1 +1,2 @@
-const String kPalavraCrudRoute = '/palavraCrud';
+const String kPalavraCrudRoute = '/palavrasCrud';
+const String kPalavrasAllRoute = '/palavrasAll';

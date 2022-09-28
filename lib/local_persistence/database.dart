@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:forca_game/local_persistence/lp_constants.dart';
-import 'package:path/path.dart' as p;
+import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -17,23 +17,15 @@ class SQFLiteDataBase {
 
   //Acesso à base de dados
   Future<Database> get database async {
-    return _database!;
+    if (_database != null) return _database!;
     _database = await _initDataBase();
     return _database!;
   }
 
-  //Este código está dando erro
-//   if (database != null) {
-//   return _database!;
-//   }
-//   _database = await _initDataBase();
-//   return _database!;
-// }
-
   //Método que inicializará a base de dados, caso ainda não exista
   _initDataBase() async {
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
-    String path = p.join(documentsDirectory.path, kDataBaseName);
+    String path = join(documentsDirectory.path, kDataBaseName);
     return await openDatabase(
       path,
       version: kDataBaseVersion,
